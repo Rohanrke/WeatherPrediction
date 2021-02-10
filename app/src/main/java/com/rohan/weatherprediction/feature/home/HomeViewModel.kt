@@ -1,6 +1,5 @@
 package com.rohan.weatherprediction.feature.home
 
-import android.util.Log
 import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -17,7 +16,6 @@ import com.rohan.weatherprediction.utils.AppUtils
 import com.rohan.weatherprediction.utils.NetworkUtils
 import kotlinx.coroutines.launch
 import java.time.DayOfWeek
-import java.util.*
 import kotlin.coroutines.CoroutineContext
 
 class HomeViewModel(

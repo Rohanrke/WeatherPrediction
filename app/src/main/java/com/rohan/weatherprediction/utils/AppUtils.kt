@@ -1,4 +1,5 @@
 package com.rohan.weatherprediction.utils
+
 import java.text.SimpleDateFormat
 import java.time.DayOfWeek
 import java.time.LocalDate
@@ -7,26 +8,26 @@ import com.rohan.weatherprediction.R
 
 object AppUtils {
 
-     fun getDateTime(s: Long?): DayOfWeek? {
-         if (s!=null) {
-             return try {
-                 val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.US)
-                 val netDate = Date(s * 1000)
-                 val formattedDate = sdf.format(netDate)
+    fun getDateTime(s: Long?): DayOfWeek? {
+        if (s != null) {
+            return try {
+                val sdf = SimpleDateFormat("dd/MM/yyyy", Locale.US)
+                val netDate = Date(s * 1000)
+                val formattedDate = sdf.format(netDate)
 
-                 LocalDate.of(
-                     formattedDate.substringAfterLast("/").toInt(),
-                     formattedDate.substringAfter("/").take(2).toInt(),
-                     formattedDate.substringBefore("/").toInt()
-                 )
-                     .dayOfWeek
-             } catch (e: Exception) {
-                 e.printStackTrace()
-                 DayOfWeek.MONDAY
-             }
-         }
+                LocalDate.of(
+                    formattedDate.substringAfterLast("/").toInt(),
+                    formattedDate.substringAfter("/").take(2).toInt(),
+                    formattedDate.substringBefore("/").toInt()
+                )
+                    .dayOfWeek
+            } catch (e: Exception) {
+                e.printStackTrace()
+                DayOfWeek.MONDAY
+            }
+        }
 
-         return DayOfWeek.MONDAY
+        return DayOfWeek.MONDAY
     }
 
     fun getColor(dt: Long?): Int {

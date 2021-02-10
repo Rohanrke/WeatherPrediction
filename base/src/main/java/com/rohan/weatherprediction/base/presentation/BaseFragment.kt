@@ -17,6 +17,7 @@ import com.rohan.weatherprediction.base.navigation.NavigationContract
 
 
 const val FIVE_SEC_MILLIS = 5000L
+
 abstract class BaseFragment<VDB : ViewDataBinding>(
     @LayoutRes private val layoutResId: Int
 ) : Fragment(), NavigationContract {
@@ -34,7 +35,6 @@ abstract class BaseFragment<VDB : ViewDataBinding>(
     abstract fun initComponents(savedInstanceState: Bundle?, binding: VDB)
 
 
-
     fun showToast(msg: String) {
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
@@ -43,7 +43,7 @@ abstract class BaseFragment<VDB : ViewDataBinding>(
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show()
     }
 
-    fun showErrorMessage(context: Activity,message: String){
+    fun showErrorMessage(context: Activity, message: String) {
         Flashbar.Builder(context)
             .gravity(Flashbar.Gravity.BOTTOM)
             .backgroundColor(

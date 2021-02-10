@@ -1,14 +1,11 @@
 package com.rohan.weatherprediction.feature.home
 
-import android.app.AlertDialog
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rohan.weatherprediction.base.presentation.BaseFragment
 import com.rohan.weatherprediction.R
-import com.rohan.weatherprediction.base.navigation.Navigator
 import com.rohan.weatherprediction.databinding.FragmentWeatherReportBinding
 import com.rohan.weatherprediction.feature.home.forecast.ForecastAdapter
-import com.rohan.weatherprediction.feature.home.search.SearchCityFragment
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class WeatherReportFragment :
@@ -33,10 +30,10 @@ class WeatherReportFragment :
         homeViewModel.getSavedCity()
     }
 
-    private fun initForecastView(){
+    private fun initForecastView() {
         foreCastAdapter = ForecastAdapter()
         binding.recyclerForecast.apply {
-            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false)
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             adapter = foreCastAdapter
         }
     }
@@ -50,8 +47,8 @@ class WeatherReportFragment :
             }
         })
         homeViewModel.savedCityLiveData.observe(this, { city ->
-                    homeViewModel.fetchCurrentWeatherData(city)
-                    homeViewModel.fetchForecastWeatherData(city)
+            homeViewModel.fetchCurrentWeatherData(city)
+            homeViewModel.fetchForecastWeatherData(city)
         })
     }
 

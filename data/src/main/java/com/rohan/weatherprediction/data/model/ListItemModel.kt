@@ -4,8 +4,6 @@ package com.rohan.weatherprediction.data.model
 import androidx.room.Embedded
 import com.google.gson.annotations.SerializedName
 
-
-
 data class ListItemModel(
 
     @SerializedName("dt")
@@ -39,4 +37,5 @@ data class ListItemModel(
 
     @SerializedName("wind")
     @Embedded(prefix = "wind")
-    val wind: WindModel?)
+    val wind: WindModel?
+)

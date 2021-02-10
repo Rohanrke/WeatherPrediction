@@ -1,6 +1,5 @@
 package com.rohan.weatherprediction.data.di
 
-import android.util.Log
 import com.google.gson.GsonBuilder
 import com.rohan.weatherprediction.data.BuildConfig
 import com.rohan.weatherprediction.data.remote.service.WeatherService
@@ -47,14 +46,6 @@ fun provideOkHttpClient(httpLoggingInterceptor: HttpLoggingInterceptor): OkHttpC
     return httpClient
 }
 
-fun provideWeatherService(retrofit: Retrofit):WeatherService {
-    retrofit.callAdapterFactories().forEach {
-        Log.e("rohan", it.javaClass.canonicalName)
-    }
+fun provideWeatherService(retrofit: Retrofit): WeatherService =
+    retrofit.create(WeatherService::class.java)
 
-    retrofit.converterFactories().forEach {
-        Log.e("rohan", it.javaClass.canonicalName)
-    }
-   return retrofit.create(WeatherService::class.java)
-
-}

@@ -12,7 +12,7 @@ import androidx.databinding.ViewDataBinding
 import com.rohan.weatherprediction.base.navigation.NavigationContract
 
 abstract class BaseActivity<VDB : ViewDataBinding> constructor(
-        @LayoutRes private val layoutResId: Int
+    @LayoutRes private val layoutResId: Int
 ) : AppCompatActivity(), NavigationContract {
 
     override fun onCreate(savedInstanceState: Bundle?) {

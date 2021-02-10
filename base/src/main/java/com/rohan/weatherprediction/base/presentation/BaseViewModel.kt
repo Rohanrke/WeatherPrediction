@@ -15,7 +15,6 @@ abstract class BaseViewModel : ViewModel() {
         get() = _state
 
 
-
     protected val _messageRes = MutableLiveData<Int>()
     val messageRes: LiveData<Int>
         get() = _messageRes
