@@ -8,12 +8,15 @@
     <dimen name="font_size12">12sp</dimen>
     <dimen name="font_size18">18sp</dimen>
     <dimen name="font_size24">24sp</dimen>
+    <dimen name="font_vLarge">75sp</dimen>
 
 
     <!-- Margins -->
+    <dimen name="layoutMargin8">8dp</dimen>
     <dimen name="layoutMargin10">10dp</dimen>
     <dimen name="layoutMargin16">16dp</dimen>
     <dimen name="layoutMargin22">22dp</dimen>
+    <dimen name="layoutMargin32">32dp</dimen>
 
     <!-- others -->
     <dimen name="height1">1dp</dimen>
@@ -21,6 +24,10 @@
     <dimen name="height400">400dp</dimen>
 
     <dimen name="size50">50dp</dimen>
+    <dimen name="size24">24dp</dimen>
+    <dimen name="size100">100dp</dimen>
+
+    <dimen name="elevation_large">8dp</dimen>
 
 
 

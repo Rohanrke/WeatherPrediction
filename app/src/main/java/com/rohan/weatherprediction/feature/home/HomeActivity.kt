@@ -73,5 +73,4 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
             SearchCityFragment::class.java.name
         )
     }
-}//
-git remote set-url origin https://rohanrke99@bitbucket.org/rohanrke99/weatherprediction.git
+}

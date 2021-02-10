@@ -92,7 +92,10 @@ class HomeViewModel(
 
     @VisibleForTesting
     private fun onForecastWeatherSuccess(entity: ForecastEntity) {
-        entity.list?.map {
+        entity.list?.sortedBy {
+            it.dt
+
+        }?.map {
             it.dayOfWeek = AppUtils.getDateTime(it.dt) ?: DayOfWeek.MONDAY
         }
 
@@ -109,6 +112,7 @@ class HomeViewModel(
         baseSharedPreferences.saveCity(city)
         updateTitle(city)
         fetchCurrentWeatherData(city)
+        fetchForecastWeatherData(city)
     }
 
     fun getSavedCity(){
@@ -121,7 +125,6 @@ class HomeViewModel(
             }
 
         }
-
     }
 
     fun updateTitle(titleString: String) {

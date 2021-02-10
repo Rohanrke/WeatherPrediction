@@ -14,12 +14,17 @@ interface WeatherService {
         cityName: String,
         @Query("appid")
         appId: String,
+        @Query("units")
+        unit: String = "metric"
+
     ): ForecastModel
 
     @GET("weather")
     suspend fun getCurrentByCityName(
         @Query("q") cityName: String,
         @Query("appid") appId: String,
+        @Query("units")
+        unit: String = "metric"
     ): CurrentWeatherModel
 }
 
