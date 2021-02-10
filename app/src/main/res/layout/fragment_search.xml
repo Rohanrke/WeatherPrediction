@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_app"
+        android:padding="@dimen/layoutMargin22">
+
+
+        <TextView
+            android:id="@+id/tvCountry"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_enter_country"
+            android:textColor="@color/white"
+            style="@style/fontOnlyBold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/edtCountry"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/size50"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/layoutMargin10"
+            android:textColor="@color/white"
+            style="@style/fontOnlyRegular"
+            app:layout_constraintTop_toBottomOf="@+id/tvCountry"/>
+
+
+        <TextView
+            android:id="@+id/tvCity"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/label_enter_city"
+            android:layout_marginTop="@dimen/layoutMargin22"
+            android:textColor="@color/white"
+            style="@style/fontOnlyBold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCountry" />
+
+        <EditText
+            android:id="@+id/edtCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="@dimen/size50"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="@dimen/layoutMargin10"
+            android:textColor="@color/white"
+            style="@style/fontOnlyRegular"
+            app:layout_constraintTop_toBottomOf="@+id/tvCity"/>
+
+
+        <Button
+            android:id="@+id/btn_Save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="@dimen/layoutMargin22"
+            app:layout_constraintTop_toBottomOf="@+id/edtCity"
+            android:textColor="@color/white"
+            style="@style/fontOnlyBold"
+            android:text="@string/label_save"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="whiteWithOpacity">#33FFFFFF</color>
+    <color name="whiteWithHalfOpacity">#80FFFFFF</color>
+    <color name="mainTextColor">#130E51</color>
+    <color name="chipItemBackgroundColor">#1AADA7FE</color>
+    <color name="chipTextColor">#5D50FE</color>
+    <color name="tint_color">#28E0AE</color>
+
+
+
+    <color name="tint_color_monday">#28E0AE</color>
+    <color name="tint_color_tuesday">#FF0090</color>
+    <color name="tint_color_wednesday">#FFAE00</color>
+    <color name="tint_color_thursday">#0090FF</color>
+    <color name="tint_color_friday">#DC0000</color>
+    <color name="tint_color_saturday">#0051FF</color>
+    <color name="tint_color_sunday">#3D28E0</color>
+
+
+</resources>

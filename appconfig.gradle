@@ -1,0 +1,10 @@
+def appVersion = [:]
+appVersion.major = 1
+appVersion.release = 1
+appVersion.minor = "0"
+
+ext.appVersion = appVersion
+
+ext.fileProviderAuthorityPrefix = [
+        app      : '.provider'
+]

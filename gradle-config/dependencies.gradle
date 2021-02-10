@@ -1,0 +1,94 @@
+/**
+ * Shared file between modules so that they can all use the same version
+ **/
+def deps = [:]
+ext.deps = deps
+
+deps.kotlin = [:]
+deps.kotlin.stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${rootProject.ext.kotlinVersion}"
+
+deps.android_support = [:]
+deps.android_support.multidex = "androidx.multidex:multidex:2.0.0"
+deps.android_support.cardview = "androidx.cardview:cardview:1.0.0"
+deps.android_support.recyclerview = "androidx.recyclerview:recyclerview:1.1.0"
+deps.android_support.swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+deps.android_support.design = "com.google.android.material:material:1.2.1"
+deps.android_support.annotations = "androidx.annotation:annotation:1.1.0"
+deps.android_support.constraint_layout = "androidx.constraintlayout:constraintlayout:2.0.0"
+deps.android_support.appcompat = "androidx.appcompat:appcompat:1.2.0"
+deps.android_support.fragment_ktx = "androidx.fragment:fragment-ktx:1.2.0-alpha04"
+
+deps.android_arch = [:]
+deps.android_arch.viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${rootProject.ext.libraryVersions.lifecycle_version}"
+deps.android_arch.liveData = "androidx.lifecycle:lifecycle-livedata-ktx:${rootProject.ext.libraryVersions.lifecycle_version}"
+deps.android_arch.testing = "androidx.arch.core:core-testing:${rootProject.ext.libraryVersions.arch_version}"
+deps.android_arch.annotation = "androidx.lifecycle:lifecycle-compiler:${rootProject.ext.libraryVersions.lifecycle_version}"
+
+deps.room = [:]
+deps.room.runtime = "androidx.room:room-runtime:${rootProject.ext.libraryVersions.room_version}"
+deps.room.compiler = "androidx.room:room-compiler:${rootProject.ext.libraryVersions.room_version}"
+deps.room.coroutines = "androidx.room:room-ktx:${rootProject.ext.libraryVersions.room_version}"
+deps.room.testing = "androidx.room:room-testing:${rootProject.ext.libraryVersions.room_version}"
+
+deps.network = [:]
+deps.network.retrofit_core = "com.squareup.retrofit2:retrofit:${rootProject.ext.libraryVersions.retrofit}"
+deps.network.retrofit_converter_gson = "com.squareup.retrofit2:converter-gson:${rootProject.ext.libraryVersions.gson}"
+//deps.network.gson = "com.google.code.gson:gson:${rootProject.ext.libraryVersions.gson}"
+
+
+deps.logging = [:]
+deps.logging.okhttp_logging_interceptor = "com.squareup.okhttp3:logging-interceptor:${rootProject.ext.libraryVersions.okhttp}"
+deps.logging.timber = "com.jakewharton.timber:timber:${rootProject.ext.libraryVersions.timber}"
+
+
+
+deps.koin = [:]
+deps.koin.core = "org.koin:koin-core:${rootProject.ext.libraryVersions.koin_version}"
+deps.koin.android = "org.koin:koin-android:${rootProject.ext.libraryVersions.koin_version}"
+deps.koin.viewmodel = "org.koin:koin-android-viewmodel:${rootProject.ext.libraryVersions.koin_version}"
+
+
+deps.glide = [:]
+deps.glide.core = "com.github.bumptech.glide:glide:${rootProject.ext.libraryVersions.glide}"
+deps.glide.compiler = "com.github.bumptech.glide:compiler:${rootProject.ext.libraryVersions.glide}"
+
+deps.paperparcel = [:]
+deps.paperparcel.core = "nz.bradcampbell:paperparcel:${rootProject.ext.libraryVersions.paperparcel}"
+deps.paperparcel.compiler = "nz.bradcampbell:paperparcel-compiler:${rootProject.ext.libraryVersions.paperparcel}"
+
+
+
+deps.test = [:]
+deps.test.runner = 'androidx.test:runner:1.1.0'
+
+deps.junit = [:]
+deps.junit.core = "androidx.test.ext:junit:${rootProject.ext.libraryVersions.junit}"
+
+deps.mockk = [:]
+deps.mockk.core = "io.mockk:mockk:${rootProject.ext.libraryVersions.mockk}"
+deps.mockk.android = "io.mockk:mockk-android:${rootProject.ext.libraryVersions.mockk}"
+
+
+deps.chuck = [:]
+deps.chuck.debug = "com.readystatesoftware.chuck:library:${rootProject.ext.libraryVersions.chuck}"
+deps.chuck.release = "com.readystatesoftware.chuck:library-no-op:${rootProject.ext.libraryVersions.chuck}"
+
+
+deps.tools = [:]
+deps.tools.javax_inject = "javax.inject:javax.inject:${rootProject.ext.libraryVersions.inject}"
+
+
+
+deps.coroutine = [:]
+deps.coroutine.core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${rootProject.ext.libraryVersions.coroutine_version}"
+deps.coroutine.android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:${rootProject.ext.libraryVersions.coroutine_version}"
+
+deps.ui = [:]
+deps.ui.flashbar = "com.andrognito.flashbar:flashbar:${rootProject.ext.libraryVersions.flashbar_version}"
+deps.ui.shadowView = "com.loopeer.lib:shadow:${rootProject.ext.libraryVersions.shadowViewVersion}"
+
+
+deps.material = [:]
+deps.material.design = "com.google.android.material:material:${rootProject.ext.libraryVersions.materialDesignVersion}"
+
+
