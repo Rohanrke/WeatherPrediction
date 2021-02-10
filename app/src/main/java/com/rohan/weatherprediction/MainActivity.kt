@@ -12,7 +12,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         Handler().postDelayed(Runnable {
-
             startActivity(Intent(this@MainActivity, HomeActivity::class.java))
             this@MainActivity.finish()
         }, 2000)

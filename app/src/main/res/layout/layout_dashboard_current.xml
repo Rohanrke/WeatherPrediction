@@ -36,6 +36,7 @@
                 android:layout_height="@dimen/size100"
                 android:layout_marginStart="@dimen/layoutMargin32"
                 android:layout_marginTop="@dimen/layoutMargin32"
+                android:contentDescription="@string/content_description_current_icon"
                 app:weatherIcon="@{lifeCycleModel.currentEntityLiveData.getCurrentWeather().icon}"
                 tools:src="@drawable/a10d_svg" />
 

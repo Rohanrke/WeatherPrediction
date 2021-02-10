@@ -9,7 +9,7 @@ class BaseSharedPreferences (private val context: Context) {
         private const val KEY_CITY = "SAVED_CITY"
     }
 
-    var preferences: SharedPreferences? = null
+    private var preferences: SharedPreferences? = null
 
     private fun getSharedPreferences(): SharedPreferences?{
         if (preferences == null){

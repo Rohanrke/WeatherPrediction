@@ -29,6 +29,7 @@
             android:layout_marginTop="@dimen/layoutMargin10"
             android:textColor="@color/white"
             style="@style/fontOnlyRegular"
+            android:inputType="textCapSentences"
             app:layout_constraintTop_toBottomOf="@+id/tvCountry"/>
 
 
@@ -51,6 +52,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/layoutMargin10"
             android:textColor="@color/white"
+            android:inputType="textCapSentences"
             style="@style/fontOnlyRegular"
             app:layout_constraintTop_toBottomOf="@+id/tvCity"/>
 

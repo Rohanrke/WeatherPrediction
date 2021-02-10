@@ -37,4 +37,8 @@
     <string name="dialog_title">Please Select a city</string>
     <string name="dialog_select">Select</string>
     <string name="dialog_cancel">Cancel</string>
+
+    <string name="content_description_forecast_icon">Forecast icon</string>
+    <string name="content_description_current_icon">Current icon</string>
+    <string name="content_description_type_icon">type icon</string>
 </resources>
