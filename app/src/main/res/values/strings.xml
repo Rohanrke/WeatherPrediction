@@ -41,4 +41,6 @@
     <string name="content_description_forecast_icon">Forecast icon</string>
     <string name="content_description_current_icon">Current icon</string>
     <string name="content_description_type_icon">type icon</string>
+
+    <string name="explore">Explore</string>
 </resources>

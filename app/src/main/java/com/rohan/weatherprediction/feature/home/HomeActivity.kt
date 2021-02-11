@@ -16,12 +16,11 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
 
     private val viewModel: HomeViewModel by viewModel()
 
+    private var weatherFragment: WeatherReportFragment? = null
+
     override fun initComponents(savedInstanceState: Bundle?, binding: ActivityHomeBinding) {
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.container, WeatherReportFragment())
-            .commit()
-
+        viewModel.getSavedCity()
+        goToReport()
     }
 
     override fun observeLiveEvents() {
@@ -29,20 +28,9 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
         viewModel.title.observe(this, {
             title = it
         })
-
-        viewModel.showErrorDialog.observe(this, { show ->
-            if (show) {
-                val builder = AlertDialog.Builder(this).setMessage(R.string.dialog_title)
-                    .setPositiveButton(R.string.dialog_select) { dialog, _ ->
-                        goToSearch()
-                        dialog.dismiss()
-
-                    }
-                    .setNegativeButton(R.string.dialog_cancel) { dialog, _ ->
-                        dialog.dismiss()
-                        finish()
-                    }
-                builder.create().show()
+        viewModel.hasCity.observe(this, { hasCity ->
+            hasCity?.let {
+                if (it) showReport() else showAlertForCity()
             }
         })
     }
@@ -72,5 +60,36 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>(R.layout.activity_home) {
             R.anim.slide_out_right,
             SearchCityFragment::class.java.name
         )
+    }
+
+    private fun goToReport() {
+        weatherFragment = WeatherReportFragment()
+        weatherFragment?.let {
+            supportFragmentManager.beginTransaction()
+                .add(R.id.container, it)
+                .hide(it)
+                .commit()
+        }
+    }
+
+    private fun showReport() {
+        weatherFragment?.let {
+            if (it.isHidden) {
+                supportFragmentManager.beginTransaction().show(it).commit()
+            }
+        }
+    }
+
+    private fun showAlertForCity() {
+        val builder = AlertDialog.Builder(this).setMessage(R.string.dialog_title)
+            .setPositiveButton(R.string.dialog_select) { dialog, _ ->
+                goToSearch()
+                dialog.dismiss()
+            }
+            .setNegativeButton(R.string.dialog_cancel) { dialog, _ ->
+                dialog.dismiss()
+                finish()
+            }
+        builder.create().show()
     }
 }

@@ -45,9 +45,9 @@ class HomeViewModel(
     val savedCityLiveData: LiveData<String>
         get() = _savedCityLiveData
 
-    private val _showErrorDialog = MutableLiveData<Boolean>(false)
-    val showErrorDialog: LiveData<Boolean>
-        get() = _showErrorDialog
+    private val _hasCity = MutableLiveData<Boolean?>()
+    val hasCity: LiveData<Boolean?>
+        get() = _hasCity
 
 
 
@@ -108,6 +108,7 @@ class HomeViewModel(
 
     fun updateCity(city: String){
         baseSharedPreferences.saveCity(city)
+        _hasCity.postValue(true)
         updateTitle(city)
         fetchCurrentWeatherData(city)
         fetchForecastWeatherData(city)
@@ -118,8 +119,9 @@ class HomeViewModel(
             baseSharedPreferences.getSavedCity()?.let {
                 _title.postValue(it)
                 _savedCityLiveData.postValue(it)
+                _hasCity.postValue(true)
             }?: kotlin.run {
-                _showErrorDialog.postValue(true)
+                _hasCity.postValue(false)
             }
 
         }

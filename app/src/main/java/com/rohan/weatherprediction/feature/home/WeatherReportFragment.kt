@@ -27,7 +27,6 @@ class WeatherReportFragment :
         }
         initForecastView()
         homeViewModel.updateTitle(getString(R.string.title_weather))
-        homeViewModel.getSavedCity()
     }
 
     private fun initForecastView() {
