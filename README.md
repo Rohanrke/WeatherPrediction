@@ -14,9 +14,12 @@ More Screen shots also added in mocksUp folder
 
 ## Screenshots
 
-```
+
 ![ScreenShot](https://i.postimg.cc/vxgt2RxP/Screenshot-1612947409.png)
+
 ![ScreenShot](https://i.postimg.cc/jCLcSf3z/Screenshot-1612947418.png)
+
 ![ScreenShot](https://i.postimg.cc/kDzc65LL/Screenshot-1612947425.png)
+
 ![ScreenShot](https://i.postimg.cc/LnPVzpp5/Screenshot-1612947441.png)
-```
+
