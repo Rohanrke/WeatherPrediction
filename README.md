@@ -2,12 +2,12 @@
 
 
 # Notes
-1- test cases added for one use case
-2- Please select country as India -- india will not work --(ignore case check not added)
-3- Please elect city as Mumbai -- mumbai will not work  --(ignore case check not added)
-4- Change city from option menu
-5- Notification part is not added because of time constraint
-6- Time in forecast cart for each day can be difeernt 
+#- few test cases added for domain and data layer
+#- Please select country as India -- india will not work --(ignore case check not added)
+#- Please elect city as Mumbai -- mumbai will not work  --(ignore case check not added)
+#- Change city from option menu
+#- Notification part is not added because of time constraint
+#- More Screen shots also added in mocksUp folder
 
 
 ![ScreenShot](https://i.postimg.cc/vxgt2RxP/Screenshot-1612947409.png)
