@@ -57,11 +57,7 @@ dependencies {
     //Logging
     api deps.logging.timber
 
-    //Parcel
-    implementation  deps.paperparcel.core
-    kapt  deps.paperparcel.compiler
 
-    implementation deps.tools.javax_inject
 
     //Glide
     implementation  deps.glide.core
