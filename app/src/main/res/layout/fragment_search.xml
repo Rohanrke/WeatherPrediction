@@ -15,7 +15,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/label_enter_country"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             style="@style/fontOnlyBold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,9 +27,9 @@
             android:minHeight="@dimen/size50"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/layoutMargin10"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             style="@style/fontOnlyRegular"
-            android:inputType="textCapSentences"
+            android:imeOptions="actionNext"
             app:layout_constraintTop_toBottomOf="@+id/tvCountry"/>
 
 
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:text="@string/label_enter_city"
             android:layout_marginTop="@dimen/layoutMargin22"
-            android:textColor="@color/white"
+            android:textColor="@android:color/black"
             style="@style/fontOnlyBold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtCountry" />
@@ -51,9 +51,9 @@
             android:minHeight="@dimen/size50"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginTop="@dimen/layoutMargin10"
-            android:textColor="@color/white"
-            android:inputType="textCapSentences"
+            android:textColor="@android:color/black"
             style="@style/fontOnlyRegular"
+            android:imeOptions="actionNext"
             app:layout_constraintTop_toBottomOf="@+id/tvCity"/>
 
 

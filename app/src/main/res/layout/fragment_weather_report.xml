@@ -18,15 +18,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="@dimen/layoutMargin10"
+            style="@style/fontOnlyBold"
+            android:textSize="@dimen/font_size18"
+            android:id="@+id/refresh"
+            android:onClick="@{() -> viewModel.refresh()}"
+            app:drawableStartCompat="@drawable/ic_refresh"
+            android:text="@string/refresh"/>
+
         <androidx.core.widget.NestedScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layoutMargin10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/refresh"
             android:background="@android:color/white">
 
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
+
 
                 <com.google.android.material.chip.Chip
                     android:id="@+id/chipToday"
@@ -76,7 +94,9 @@
                     android:id="@+id/recyclerForecast"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/layoutMargin32"
                     android:layout_below="@id/textViewForecastHeader"
+                    android:paddingBottom="@dimen/layoutMargin32"
                     android:layout_marginStart="@dimen/layoutMargin8"
                     android:layout_marginTop="@dimen/layoutMargin16"
                     android:layout_marginEnd="@dimen/layoutMargin8"/>

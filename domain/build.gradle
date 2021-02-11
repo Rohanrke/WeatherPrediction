@@ -13,9 +13,8 @@ dependencies {
 
     implementation deps.coroutine.core
     implementation deps.coroutine.android
-    testImplementation 'junit:junit:4.+'
+    testImplementation 'junit:junit:4.13.1'
 
     testImplementation deps.mockk.core
-    testImplementation deps.mockk.android
     testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.4.2'
 }

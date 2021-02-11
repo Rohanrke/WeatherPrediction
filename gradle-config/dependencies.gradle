@@ -68,7 +68,6 @@ deps.mockk = [:]
 deps.mockk.core = "io.mockk:mockk:${rootProject.ext.libraryVersions.mockk}"
 deps.mockk.android = "io.mockk:mockk-android:${rootProject.ext.libraryVersions.mockk}"
 
-
 deps.chuck = [:]
 deps.chuck.debug = "com.readystatesoftware.chuck:library:${rootProject.ext.libraryVersions.chuck}"
 deps.chuck.release = "com.readystatesoftware.chuck:library-no-op:${rootProject.ext.libraryVersions.chuck}"

@@ -4,10 +4,13 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingAdapter
 import com.loopeer.shadow.ShadowView
 import com.rohan.weatherprediction.utils.AppUtils
 import com.rohan.weatherprediction.R
+import com.rohan.weatherprediction.domain.entity.CurrentWeatherEntity
+import com.rohan.weatherprediction.domain.entity.ListItemEntity
 import java.time.format.TextStyle
 import java.util.*
 
@@ -23,8 +26,8 @@ fun setBackgroundColor(view: View, dt: Long){
 fun setWeatherIcon(view: ImageView, imageUri: String?) {
     imageUri?.let {
         val newPath = imageUri.replace(imageUri, "a$imageUri")
-        val imageid = view.context.resources.getIdentifier(newPath + "_svg", "drawable", view.context.packageName)
-        val imageDrawable = view.context.resources.getDrawable(imageid, null)
+        val imageId = view.context.resources.getIdentifier(newPath + "_svg", "drawable", view.context.packageName)
+        val imageDrawable = ResourcesCompat.getDrawable(view.context.resources,imageId, null)
         view.setImageDrawable(imageDrawable)
     }
 }
@@ -53,6 +56,30 @@ fun shadowColor(view: ShadowView, dt: Long?){
 fun setDay(view: TextView, dt: Long?) {
     dt?.let {
         view.text = AppUtils.getDateTime(it)?.getDisplayName(TextStyle.FULL, Locale.getDefault())
+    }
+
+}
+
+@BindingAdapter("varianceTempForecast")
+fun setVariance(view: TextView, item: ListItemEntity?){
+    item?.main?.let {
+        val text = when {
+            item.tempMinVariance -> {
+                view.context.getString(R.string.alert_less_temp,AppUtils.formatTempValue(it.temp))
+
+            }
+            item.tempMaxVariance -> {
+                view.context.getString(R.string.alert_more_temp,AppUtils.formatTempValue(it.temp))
+            }
+            else -> {
+                ""
+            }
+        }
+
+        if (text.isNotEmpty()){
+            view.text = text
+            view.visibility = View.VISIBLE
+        }
     }
 
 }

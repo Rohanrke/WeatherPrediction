@@ -6,10 +6,6 @@
         <item name="fontFamily">@font/roboto_regular</item>
     </style>
 
-    <style name="fontOnlyLight">
-        <item name="android:fontFamily">@font/roboto_light</item>
-        <item name="fontFamily">@font/roboto_light</item>
-    </style>
 
     <style name="fontOnlyBold">
         <item name="android:fontFamily">@font/roboto_bold</item>

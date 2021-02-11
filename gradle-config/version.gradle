@@ -27,7 +27,7 @@ ext.libraryVersions = [
         lifecycle_version           : '2.2.0',
         arch_version                : '2.1.0',
         junit                       : '1.1.0',
-        mockk                       : '1.9.2',
+        mockk                       : '1.10.5',
         chuck                       : '1.1.0',
         coroutine_version           : '1.4.2',
         flashbar_version            : "1.0.2",

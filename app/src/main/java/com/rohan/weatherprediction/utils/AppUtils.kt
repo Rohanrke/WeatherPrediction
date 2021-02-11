@@ -5,6 +5,7 @@ import java.time.DayOfWeek
 import java.time.LocalDate
 import java.util.*
 import com.rohan.weatherprediction.R
+import java.text.DecimalFormat
 
 object AppUtils {
 
@@ -41,5 +42,13 @@ object AppUtils {
             DayOfWeek.SUNDAY -> R.color.tint_color_sunday
             else -> R.color.tint_color_monday
         }
+    }
+
+    fun formatTempValue(temp: Double?): String {
+        val df: DecimalFormat = DecimalFormat("##.##");
+        temp?.let {
+            return df.format(it)
+        }
+        return ""
     }
 }
