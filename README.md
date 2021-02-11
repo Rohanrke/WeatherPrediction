@@ -1,17 +1,30 @@
 # WeatherPrediction
 
+# Foobar
 
-# Notes
-#- few test cases added for domain and data layer
-#- Please select country as India -- india will not work --(ignore case check not added)
-#- Please elect city as Mumbai -- mumbai will not work  --(ignore case check not added)
-#- Change city from option menu
-#- Notification part is not added because of time constraint
-#- More Screen shots also added in mocksUp folder
+Foobar is a Python library for dealing with word pluralization.
 
+## Installation
 
-![ScreenShot](https://i.postimg.cc/vxgt2RxP/Screenshot-1612947409.png)
-![ScreenShot](https://i.postimg.cc/jCLcSf3z/Screenshot-1612947418.png)
-![ScreenShot](https://i.postimg.cc/kDzc65LL/Screenshot-1612947425.png)
-![ScreenShot](https://i.postimg.cc/LnPVzpp5/Screenshot-1612947441.png)
+Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
 
+```bash
+pip install foobar
+```
+
+## Usage
+
+```python
+import foobar
+
+foobar.pluralize('word') # returns 'words'
+foobar.pluralize('goose') # returns 'geese'
+foobar.singularize('phenomena') # returns 'phenomenon'
+```
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
