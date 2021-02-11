@@ -4,6 +4,7 @@ import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.core.content.res.ResourcesCompat
 import androidx.databinding.BindingAdapter
 import com.loopeer.shadow.ShadowView
 import com.rohan.weatherprediction.utils.AppUtils
@@ -23,8 +24,8 @@ fun setBackgroundColor(view: View, dt: Long){
 fun setWeatherIcon(view: ImageView, imageUri: String?) {
     imageUri?.let {
         val newPath = imageUri.replace(imageUri, "a$imageUri")
-        val imageid = view.context.resources.getIdentifier(newPath + "_svg", "drawable", view.context.packageName)
-        val imageDrawable = view.context.resources.getDrawable(imageid, null)
+        val imageId = view.context.resources.getIdentifier(newPath + "_svg", "drawable", view.context.packageName)
+        val imageDrawable = ResourcesCompat.getDrawable(view.context.resources,imageId, null)
         view.setImageDrawable(imageDrawable)
     }
 }

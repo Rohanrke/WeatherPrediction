@@ -1,10 +1,5 @@
 package com.rohan.weatherprediction.data.mapper.weather
-
-import com.rohan.weatherprediction.data.FailureHandler
 import com.rohan.weatherprediction.data.repository.TestUtils
-import com.rohan.weatherprediction.data.repository.WeatherRepositoryImpl
-import com.rohan.weatherprediction.domain.entity.MainDataEntity
-import com.rohan.weatherprediction.domain.entity.WeatherItemEntity
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -44,11 +39,7 @@ class ListItemMapperTest{
         every { mainDataMapper.map(any()) } returns mainDataEntity
         every { weatherItemMapper.map(any()) } returns weatherItemEntity
 
-
-
         val expected = mapper.map(remote = model)
         Assert.assertEquals(expected, entity)
     }
-
-
 }

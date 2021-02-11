@@ -13,7 +13,7 @@ import org.junit.Test
 
 class WeatherStoreTest{
 
-    lateinit var store: IWeatherStore
+    private lateinit var store: IWeatherStore
 
     @MockK
     private lateinit var weatherDao: CurrentWeatherDao

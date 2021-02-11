@@ -2,7 +2,6 @@ package com.rohan.weatherprediction.data.repository
 
 import com.rohan.weatherprediction.data.model.*
 import com.rohan.weatherprediction.domain.entity.*
-import io.mockk.InternalPlatformDsl.toStr
 
 object TestUtils {
 

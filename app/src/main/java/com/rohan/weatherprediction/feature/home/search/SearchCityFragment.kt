@@ -15,7 +15,7 @@ class SearchCityFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment
     private val searchViewModel: SearchCityViewModel by viewModel()
     private val homeViewModel: HomeViewModel by sharedViewModel()
 
-    lateinit var binding: FragmentSearchBinding
+    private lateinit var binding: FragmentSearchBinding
 
     override fun initComponents(savedInstanceState: Bundle?, binding: FragmentSearchBinding) {
         this.binding = binding
@@ -48,7 +48,7 @@ class SearchCityFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment
     }
 
     private fun setupEditFilter() {
-        var letterFilter =
+        val letterFilter =
             InputFilter { source, start, end, _, _, _ ->
                 var filtered = ""
                 for (i in start until end) {
