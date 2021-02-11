@@ -48,20 +48,18 @@ class SearchCityFragment : BaseFragment<FragmentSearchBinding>(R.layout.fragment
     }
 
     private fun setupEditFilter() {
-        val letterFilter =
-            InputFilter { source, start, end, _, _, _ ->
-                var filtered = ""
-                for (i in start until end) {
-                    val character = source[i]
-                    if (!Character.isWhitespace(character) && Character.isLetter(character)) {
-                        filtered += character
-                    }
+        val regex = Regex("[a-zA-Z ]+")
+        val filter =
+            InputFilter { cs, _, _, _, _, _ ->
+                if (cs == "") {
+                    return@InputFilter cs
                 }
-                filtered
+                if (cs.toString().matches(regex)) {
+                    cs
+                } else ""
             }
-
-        binding.edtCity.filters = arrayOf(letterFilter)
-        binding.edtCountry.filters = arrayOf(letterFilter)
+        binding.edtCity.filters = arrayOf(filter)
+        binding.edtCountry.filters = arrayOf(filter)
     }
 
 }
