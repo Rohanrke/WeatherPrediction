@@ -12,7 +12,9 @@ data class ListItemEntity(
     val clouds: Int?,
     val country: String?,
     val wind: WindEntity?,
-    var dayOfWeek: DayOfWeek = DayOfWeek.MONDAY
+    var dayOfWeek: DayOfWeek = DayOfWeek.MONDAY,
+    var tempMinVariance: Boolean = false,
+    var tempMaxVariance: Boolean = false
 ){
 
     fun getHourOfDay(): String {

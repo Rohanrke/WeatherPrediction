@@ -9,6 +9,8 @@ import androidx.databinding.BindingAdapter
 import com.loopeer.shadow.ShadowView
 import com.rohan.weatherprediction.utils.AppUtils
 import com.rohan.weatherprediction.R
+import com.rohan.weatherprediction.domain.entity.CurrentWeatherEntity
+import com.rohan.weatherprediction.domain.entity.ListItemEntity
 import java.time.format.TextStyle
 import java.util.*
 
@@ -54,6 +56,30 @@ fun shadowColor(view: ShadowView, dt: Long?){
 fun setDay(view: TextView, dt: Long?) {
     dt?.let {
         view.text = AppUtils.getDateTime(it)?.getDisplayName(TextStyle.FULL, Locale.getDefault())
+    }
+
+}
+
+@BindingAdapter("varianceTempForecast")
+fun setVariance(view: TextView, item: ListItemEntity?){
+    item?.main?.let {
+        val text = when {
+            item.tempMinVariance -> {
+                view.context.getString(R.string.alert_less_temp,AppUtils.formatTempValue(it.temp))
+
+            }
+            item.tempMaxVariance -> {
+                view.context.getString(R.string.alert_more_temp,AppUtils.formatTempValue(it.temp))
+            }
+            else -> {
+                ""
+            }
+        }
+
+        if (text.isNotEmpty()){
+            view.text = text
+            view.visibility = View.VISIBLE
+        }
     }
 
 }

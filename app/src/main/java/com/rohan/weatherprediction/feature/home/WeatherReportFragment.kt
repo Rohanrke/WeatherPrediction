@@ -1,6 +1,8 @@
 package com.rohan.weatherprediction.feature.home
 
+import android.app.AlertDialog
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.rohan.weatherprediction.base.presentation.BaseFragment
 import com.rohan.weatherprediction.R
@@ -26,7 +28,6 @@ class WeatherReportFragment :
             lifecycleOwner = this@WeatherReportFragment
         }
         initForecastView()
-        homeViewModel.updateTitle(getString(R.string.title_weather))
     }
 
     private fun initForecastView() {
@@ -49,6 +50,27 @@ class WeatherReportFragment :
             homeViewModel.fetchCurrentWeatherData(city)
             homeViewModel.fetchForecastWeatherData(city)
         })
+
+        homeViewModel.messageRes.observe(this, {
+            showToast(it)
+        })
+
+        homeViewModel.alertItem.observe(this, Observer {
+            showAlertForWeather(it)
+        })
     }
+
+    private fun showAlertForWeather(alertItem: AlertItem) {
+        activity?.let {
+            val builder = AlertDialog.Builder(it).setTitle(R.string.dialog_title_alert)
+                .setMessage(getString(alertItem.messageId,alertItem.tempString))
+                .setNeutralButton(R.string.dialog_ok) { dialog, _ ->
+                    dialog.dismiss()
+                }
+
+            builder.create().show()
+        }
+    }
+
 
 }

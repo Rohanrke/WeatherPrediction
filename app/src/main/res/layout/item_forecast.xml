@@ -54,6 +54,7 @@
                 android:layout_height="wrap_content">
 
 
+
                 <ImageView
                     android:layout_width="170dp"
                     android:layout_height="124dp"
@@ -102,12 +103,30 @@
                     tools:src="@drawable/ic_splash_big_cloud" />
 
                 <TextView
+                    android:id="@+id/tv_notify"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:varianceTempForecast="@{item}"
+                    android:layout_below="@id/textViewDayOfWeek"
+                    android:layout_centerHorizontal="true"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark"
+                    android:textSize="@dimen/font_size18"
+                    android:layout_marginTop="18dp"
+                    style="@style/fontOnlyBold"
+                    android:visibility="gone"
+                    tools:visibility="visible"
+                    tools:text="temp less than min" />
+
+                <TextView
                     android:id="@+id/textViewTemp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/imageViewForecastIcon"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="8dp"
+                    android:layout_marginStart="@dimen/layout_margin5"
+                    android:layout_marginEnd="@dimen/layout_margin5"
                     app:temp="@{item.main.temp}"
                     android:textColor="@color/white"
                     android:textSize="26sp"
@@ -145,5 +164,7 @@
                 </LinearLayout>
             </RelativeLayout>
         </com.google.android.material.card.MaterialCardView>
+
+
     </RelativeLayout>
 </layout>

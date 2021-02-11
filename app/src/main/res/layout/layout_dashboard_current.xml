@@ -30,7 +30,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <ImageView
+                android:layout_below="@+id/tv_notify"
                 android:id="@+id/imageViewWeatherIcon"
                 android:layout_width="@dimen/size100"
                 android:layout_height="@dimen/size100"
@@ -41,6 +43,7 @@
                 tools:src="@drawable/a10d_svg" />
 
             <TextView
+                android:layout_below="@+id/tv_notify"
                 android:id="@+id/textViewTemperature"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
