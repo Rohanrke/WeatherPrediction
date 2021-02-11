@@ -51,4 +51,6 @@
 
     <string name="alert_less_temp"> %1$s ° - Alert: temp less min</string>
     <string name="alert_more_temp">%1$s ° - Alert: temp more than max</string>
+
+    <string name="message_network_issue">Network not connected"</string>
 </resources>

@@ -27,7 +27,8 @@ class HomeViewModel(
     private val currentWeatherUseCase: GetCurrentWeatherUseCase,
     private val forecastWeatherUseCase: GetForecastWeatherUseCase,
     private val baseSharedPreferences: BaseSharedPreferences,
-    private val remoteConfig: RemoteConfig
+    private val remoteConfig: RemoteConfig,
+    private val networkUtils: NetworkUtils
 ) : BaseViewModel() {
 
 
@@ -58,6 +59,12 @@ class HomeViewModel(
     val alertItem: LiveData<AlertItem>
         get() = _alertItem
 
+
+    init {
+        if (!networkUtils.isNetworkAvailable()){
+            _state.postValue(ProgressState.ERROR)
+        }
+    }
 
     fun fetchCurrentWeatherData(city: String) {
         viewModelScope.launch(context) {

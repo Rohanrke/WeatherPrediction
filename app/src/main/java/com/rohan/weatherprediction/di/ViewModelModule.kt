@@ -8,6 +8,6 @@ import org.koin.dsl.module
 
 
 fun viewModelModule() = module {
-    viewModel { HomeViewModel(Dispatchers.IO, get(), get(), get(), get()) }
+    viewModel { HomeViewModel(Dispatchers.IO, get(), get(), get(), get(), get()) }
     viewModel { SearchCityViewModel(Dispatchers.IO, get() ) }
 }
